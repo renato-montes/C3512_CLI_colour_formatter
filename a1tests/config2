@@ -1,0 +1,5 @@
+grey       \e[0;37m  # grey
+(blue        \e[0;34m   # blue
+red         \e[0;31m  # red 
+green   \e[0;32m  # green
+color(brown)  \e[0;33m  # brown

@@ -1,0 +1,7 @@
+normal        \e[0;37m  # grey
+italic        \e[0;34m  # blue, this line in effect for italic
+bold          \e[0;31m  # red 
+italic        \e[0;35m  # doesn't override previous value
+underline     \e[0;32m  # green
+color(brown)  \e[0;33m 
+BOLD

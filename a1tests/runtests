@@ -1,0 +1,26 @@
+#!/bin/bash
+
+runtest() {
+  bash -c "$1 > my-$2 2> /dev/null"
+  cmp $2 my-$2 > /dev/null
+  if [ $? -eq 0 ]; then
+    printf "passed: "
+  else
+    printf "FAILED: "
+  fi
+  printf "%s\n" "$1 > my-$2 2> /dev/null"
+}
+
+echo "Delete output files (my-out.*) from previous tests?"
+echo "Press ctl-c to abort, any other key to delete my-out files & run tests"
+read x
+rm -f my-out?.*
+
+runtest "./a1 < in.1" out.1
+runtest "./a1 < in.2" out.2
+runtest "./a1 < in.3" out.3
+runtest "./a1 < in.4" out.4
+runtest "./a1 < in.5" out.5
+runtest "./a1 < in.6" out.6
+runtest "./a1 config2 < in2.1" out2.1
+runtest "./a1 config2 < in2.2" out2.2
